@@ -1,14 +1,12 @@
 import csv 
 
-#thursday_file = open('C:/Users/emily/Downloads/Thursday_Report.csv')
-#saturday_file = open('C:/Users/emily/Downloads/SatReport.csv')
 thursday_file_input = input("Enter the full path to the file for Thursday's report: ")
 saturday_file_input = input("Enter the full path to the file for Saturday's report: ")
 
 thursday_file = open(thursday_file_input) 
 saturday_file = open(saturday_file_input)
 
-thursday_reader_input = csv.reader(thursday_file)
+thursday_reader = csv.reader(thursday_file)
 saturday_reader = csv.reader(saturday_file)
 
 winners = [] 
@@ -55,7 +53,6 @@ for i in range(len(thursday_fnames)):
 y = 0 
 for j in range(len(thursday_numbers)): 
     if float(saturday_numbers[y]) - float(thursday_numbers[y]) >= 48.00: 
-        #print(str(float(friday_numbers[y]) - float(thursday_numbers[y])))
         if thursday_fnames[y] == saturday_fnames[y] and thursday_lnames[y] == saturday_lnames[y]: 
             name = thursday_fnames[y] + thursday_lnames[y] 
             winners.append(name)
