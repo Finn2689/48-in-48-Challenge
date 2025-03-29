@@ -1,33 +1,33 @@
 import csv 
 
 thursday_file = open('C:/Users/emily/Downloads/Thursday_Report.csv')
-friday_file = open('C:/Users/emily/Downloads/SatReport.csv')
+saturday_file = open('C:/Users/emily/Downloads/SatReport.csv')
 
 thursday_reader = csv.reader(thursday_file)
-friday_reader = csv.reader(friday_file)
+saturday_reader = csv.reader(saturday_file)
 
 winners = [] 
 thursday_numbers = [] 
-friday_numbers = [] 
+saturday_numbers = [] 
 
 thursday_fnames = [] 
-friday_fnames = [] 
+saturday_fnames = [] 
 
 thursday_lnames = [] 
-friday_lnames = [] 
+saturday_lnames = [] 
 
 line = 0 
-header = next(friday_reader)
+header = next(saturday_reader)
 header = next(thursday_reader)
 for row in thursday_reader: 
     thursday_fnames.append(row[2]) 
     thursday_lnames.append(row[3])
     thursday_numbers.append(row[10])
 
-for row in friday_reader: 
-    friday_fnames.append(row[2])
-    friday_lnames.append(row[3])
-    friday_numbers.append(row[10])
+for row in saturday_reader: 
+    saturday_fnames.append(row[2])
+    saturday_lnames.append(row[3])
+    saturday_numbers.append(row[10])
 
 '''
 abc = 0 
@@ -43,15 +43,15 @@ for abc in range(10):
 
 x = 0
 for i in range(len(thursday_fnames)): 
-    if thursday_fnames[x] != friday_fnames[x] or thursday_lnames[x] != friday_lnames[x]: 
+    if thursday_fnames[x] != saturday_fnames[x] or thursday_lnames[x] != saturday_lnames[x]: 
         print("you fucked up")
     x += 1 
 
 y = 0 
 for j in range(len(thursday_numbers)): 
-    if float(friday_numbers[y]) - float(thursday_numbers[y]) >= 48.00: 
+    if float(saturday_numbers[y]) - float(thursday_numbers[y]) >= 48.00: 
         #print(str(float(friday_numbers[y]) - float(thursday_numbers[y])))
-        if thursday_fnames[y] == friday_fnames[y] and thursday_lnames[y] == friday_lnames[y]: 
+        if thursday_fnames[y] == saturday_fnames[y] and thursday_lnames[y] == saturday_lnames[y]: 
             name = thursday_fnames[y] + thursday_lnames[y] 
             winners.append(name)
     y += 1 
