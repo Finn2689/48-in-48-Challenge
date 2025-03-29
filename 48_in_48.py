@@ -1,9 +1,14 @@
 import csv 
 
-thursday_file = open('C:/Users/emily/Downloads/Thursday_Report.csv')
-saturday_file = open('C:/Users/emily/Downloads/SatReport.csv')
+#thursday_file = open('C:/Users/emily/Downloads/Thursday_Report.csv')
+#saturday_file = open('C:/Users/emily/Downloads/SatReport.csv')
+thursday_file_input = input("Enter the full path to the file for Thursday's report: ")
+saturday_file_input = input("Enter the full path to the file for Saturday's report: ")
 
-thursday_reader = csv.reader(thursday_file)
+thursday_file = open(thursday_file_input) 
+saturday_file = open(saturday_file_input)
+
+thursday_reader_input = csv.reader(thursday_file)
 saturday_reader = csv.reader(saturday_file)
 
 winners = [] 
